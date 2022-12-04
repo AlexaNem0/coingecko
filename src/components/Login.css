@@ -11,7 +11,7 @@
 }
 
 .login img {
-  width: 300px;
+  width: 500px;
 }
 
 .login img:hover {
@@ -29,5 +29,8 @@
 @media screen and (max-width: 940px) {
   .login .container {
     grid-template-columns: 1fr;
+  }
+  .login img {
+    width: 300px;
   }
 }

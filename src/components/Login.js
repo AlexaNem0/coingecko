@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.css";
-import Trade from "../assets/login.png";
+import Trade from "../assets/trade-1.webp";
 
 const Login = () => {
   return (

@@ -46,13 +46,26 @@
 
 .nav-menu a {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
   color: #333;
 }
 
 .hamburger {
   display: none;
   cursor: pointer;
+}
+
+.ndax {
+  width: 90px;
+}
+
+.crypto {
+  width: 130px;
+}
+
+.coin {
+  width: 110px;
 }
 
 @media screen and (max-width: 600px) {
