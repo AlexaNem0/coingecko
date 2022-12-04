@@ -9,9 +9,10 @@ const Navbar = () => {
   return (
     <div className="header">
       <div className="container">
-        <h1>
-          BI<span className="primary">Coin</span>
-        </h1>
+        <div className="bi-heading">
+          <h1 className="bi-rotation">₿I</h1>
+          <p className="primary no-rotation">Coin</p>
+        </div>
         <ul className={clickHamburger ? "nav-menu active" : "nav-menu"}>
           <li>
             <a href="/">Home</a>
@@ -31,9 +32,9 @@ const Navbar = () => {
         </div>
         <div className="hamburger" onClick={handleClick}>
           {clickHamburger ? (
-            <FaTimes size={20} style={{ color: "#333" }} />
+            <FaTimes size={20} style={{ color: "#adb5bd" }} />
           ) : (
-            <FaBars size={20} style={{ color: "#333" }} />
+            <FaBars size={20} style={{ color: "#adb5bd" }} />
           )}
         </div>
       </div>

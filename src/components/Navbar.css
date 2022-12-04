@@ -14,7 +14,22 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 2rem;
+}
+
+.bi-heading {
+  display: flex;
+  align-items: center;
+}
+
+.bi-rotation {
+  transform: rotate(8deg);
+  color: #adb5bd;
+}
+
+.no-rotation {
+  font-size: 3.5rem;
+  font-weight: 700;
 }
 
 .colors {
@@ -38,6 +53,12 @@
 .hamburger {
   display: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .no-rotation {
+    font-size: 2.1rem;
+  }
 }
 
 @media screen and (max-width: 1240px) {

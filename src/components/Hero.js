@@ -8,7 +8,7 @@ const Hero = () => {
       <div className="container">
         <div className="left">
           <p> Buy & Sell Crypto 24/7 using your savings account</p>
-          <h1>Invest in Cryptocurrency with your TFSA</h1>
+          <h1 className="invest">Invest in Cryptocurrency with your TFSA</h1>
           <p>Buy, Sell, and store hundreds of Coins in one place</p>
           <div className="input-container">
             <input type="text" placeholder="Enter your email" />

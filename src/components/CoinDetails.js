@@ -26,7 +26,9 @@ const CoinDetails = () => {
     <div className="featured">
       <div className="container">
         <div className="left">
-          <h2>Explore top Crypto Coins Like BitCoin, Ethereum and DogeCoin</h2>
+          <h2 className="explore">
+            Explore top Crypto Coins Like BitCoin, Ethereum and DogeCoin
+          </h2>
           <p>See all available assets: Crypto Coins and NFT</p>
           <button className="btn">See More Coins</button>
         </div>
