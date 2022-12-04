@@ -50,6 +50,7 @@ const CoinDetails = () => {
                 {data[0].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -70,6 +71,7 @@ const CoinDetails = () => {
                 {data[1].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -90,6 +92,7 @@ const CoinDetails = () => {
                 {data[2].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -110,6 +113,7 @@ const CoinDetails = () => {
                 {data[3].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -130,6 +134,7 @@ const CoinDetails = () => {
                 {data[4].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -150,6 +155,7 @@ const CoinDetails = () => {
                 {data[5].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -170,6 +176,7 @@ const CoinDetails = () => {
                 {data[6].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -190,6 +197,7 @@ const CoinDetails = () => {
                 {data[7].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
           <div className="card">
             <div className="top">
@@ -210,6 +218,7 @@ const CoinDetails = () => {
                 {data[8].price_change_percentage_24h.toFixed(2)}%
               </span>
             )}
+            <button className="btn">Add</button>
           </div>
         </div>
       </div>
