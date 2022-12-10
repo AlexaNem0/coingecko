@@ -11,8 +11,24 @@ const Hero = () => {
           <h1 className="invest">Invest in Cryptocurrency with your TFSA</h1>
           <p>Buy, Sell, and store hundreds of Coins in one place</p>
           <div className="input-container">
-            <input type="text" placeholder="Enter your email" />
-            <button className="btn">Learn More</button>
+            <form
+              className="form_style"
+              name="contact"
+              action="/contact"
+              method="post"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input
+                required
+                type="text"
+                name="name"
+                placeholder="Your name"
+              ></input>
+              <input name="email" type="text" placeholder="Enter your email" />
+              <button type="submit" className="btn">
+                Learn More
+              </button>
+            </form>
           </div>
         </div>
         <div className="right">
