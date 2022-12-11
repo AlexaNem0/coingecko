@@ -29,8 +29,13 @@ const CoinDetails = () => {
           <h2 className="explore">
             Explore top Crypto Coins Like BitCoin, Ethereum and DogeCoin
           </h2>
-          <p>See all available assets: Crypto Coins and NFT</p>
-          <button className="btn">See More Coins</button>
+          <p>See all available Crypto Coins assets:</p>
+          <div className="input-container">
+            <input type="email" placeholder="Find your coin" />
+            <button type="submit" className="btn ">
+              Sign up
+            </button>
+          </div>
         </div>
         <div className="right">
           <div className="card">
