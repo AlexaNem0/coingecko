@@ -7,9 +7,10 @@ import Crypto from "../assets/crypto.png";
 import Coin from "../assets/coin.svg";
 
 const Navbar = () => {
-  const [clickHamburger, setClickHamburger] = useState(false);
+  const [clickHamburger, setClickHamburger] = useState();
 
   const handleClick = () => setClickHamburger(!clickHamburger);
+
   return (
     <div className="header">
       <div className="container">
@@ -17,6 +18,7 @@ const Navbar = () => {
           <h1 className="bi-rotation">₿I</h1>
           <p className="primary no-rotation">Coin</p>
         </div>
+
         <ul className={clickHamburger ? "nav-menu active" : "nav-menu"}>
           <li>
             <a href="https://www.wealthsimple.com/en-ca" target="blank">
