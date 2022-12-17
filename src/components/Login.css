@@ -26,11 +26,42 @@
   color: #adb5bd;
 }
 
+.input-container-app {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+.btn-app {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 @media screen and (max-width: 940px) {
   .login .container {
     grid-template-columns: 1fr;
   }
   .login img {
     width: 300px;
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .input-container-app {
+    flex-direction: column;
+  }
+  .icon {
+    font-size: 2rem;
+  }
+  .btn-app {
+    justify-content: space-evenly;
+    font-size: 1.2rem;
   }
 }

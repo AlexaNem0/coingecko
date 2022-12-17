@@ -95,7 +95,7 @@
   }
 
   .nav-menu.active {
-    display: inline;
+    display: flex;
     right: 0;
   }
   .nav-menu li {

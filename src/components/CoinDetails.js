@@ -33,7 +33,7 @@ const CoinDetails = () => {
           <div className="input-container">
             <input type="email" placeholder="Find your coin" />
             <button type="submit" className="btn ">
-              Sign up
+              Search
             </button>
           </div>
         </div>
