@@ -88,77 +88,12 @@ const NftDetails = () => {
           </div>
           <div className="card">
             <div className="top">
-              <img src={data.collections[3].image} alt="/" />
+              <img src={data.collections[4].image} alt="/" />
             </div>
             <div>
-              <h5>{data.collections[3].name}</h5>
-              <p>{data.collections[3].floorAsk.price.currency.name}</p>
-              <p>${data.collections[3].floorAsk.price.amount.usd.toFixed(2)}</p>
-            </div>
-            <button className="btn">Add</button>
-          </div>
-          <div className="card">
-            <div className="top">
-              <img src={data.collections[15].image} alt="/" />
-            </div>
-            <div>
-              <h5>{data.collections[15].name}</h5>
-              <p>{data.collections[15].floorAsk.price.currency.name}</p>
-              <p>
-                ${data.collections[15].floorAsk.price.amount.usd.toFixed(2)}
-              </p>
-            </div>
-            <button className="btn">Add</button>
-          </div>
-          <div className="card">
-            <div className="top">
-              <img src={data.collections[12].image} alt="/" />
-            </div>
-            <div>
-              <h5>{data.collections[12].name}</h5>
-              <p>{data.collections[12].floorAsk.price.currency.name}</p>
-              <p>
-                ${data.collections[12].floorAsk.price.amount.usd.toFixed(2)}
-              </p>
-            </div>
-            <button className="btn">Add</button>
-          </div>
-          <div className="card">
-            <div className="top">
-              <img src={data.collections[16].image} alt="/" />
-            </div>
-            <div>
-              <h5>{data.collections[16].name}</h5>
-              <p>{data.collections[16].floorAsk.price.currency.name}</p>
-              <p>
-                ${data.collections[16].floorAsk.price.amount.usd.toFixed(2)}
-              </p>
-            </div>
-            <button className="btn">Add</button>
-          </div>
-          <div className="card">
-            <div className="top">
-              <img src={data.collections[18].image} alt="/" />
-            </div>
-            <div>
-              <h5>{data.collections[18].name}</h5>
-              <p>{data.collections[18].floorAsk.price.currency.name}</p>
-              <p>
-                ${data.collections[18].floorAsk.price.amount.usd.toFixed(2)}
-              </p>
-            </div>
-            <button className="btn">Add</button>
-          </div>
-          <div className="card">
-            <div className="top">
-              <img src={data.collections[19].image} alt="/" />
-            </div>
-            <div>
-              <h5>{data.collections[19].name}</h5>
-              <p>{data.collections[19].floorAsk.price.currency.name}</p>
-              <p>
-                ${data.collections[19].floorAsk.price.amount.usd.toFixed(2)}
-              </p>
+              <h5>{data.collections[4].name}</h5>
+              <p>{data.collections[4].floorAsk.price.currency.name}</p>
+              <p>${data.collections[4].floorAsk.price.amount.usd.toFixed(2)}</p>
             </div>
             <button className="btn">Add</button>
           </div>
