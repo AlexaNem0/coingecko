@@ -68,6 +68,10 @@
   width: 110px;
 }
 
+.btn-wallet {
+  margin-right: 0.5rem;
+}
+
 @media screen and (max-width: 600px) {
   .no-rotation {
     font-size: 2.1rem;
