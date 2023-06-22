@@ -5,8 +5,7 @@ import Wealthlogo from "../assets/wealthsimple.svg";
 import Ndax from "../assets/new-ndax-logo-1.svg";
 import Crypto from "../assets/crypto.png";
 import Coin from "../assets/coin.svg";
-import { SlWallet } from "react-icons/sl";
-
+import WalletButton from "./WalletButton";
 const Navbar = () => {
   const [clickHamburger, setClickHamburger] = useState();
 
@@ -42,12 +41,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <div className="btn-group">
-          <button className="btn ">
-            <SlWallet className="btn-wallet" />
-            Your Wallet
-          </button>
-        </div>
+        <WalletButton />
         <div className="hamburger" onClick={handleClick}>
           {clickHamburger ? (
             <FaTimes size={20} style={{ color: "#adb5bd" }} />
