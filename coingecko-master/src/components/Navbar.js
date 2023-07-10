@@ -6,8 +6,9 @@ import Ndax from "../assets/new-ndax-logo-1.svg";
 import Crypto from "../assets/crypto.png";
 import Coin from "../assets/coin.svg";
 import WalletButton from "./WalletButton";
-const Navbar = () => {
-  const [clickHamburger, setClickHamburger] = useState();
+
+const Navbar = (props) => {
+  const [clickHamburger, setClickHamburger] = useState(false);
 
   const handleClick = () => setClickHamburger(!clickHamburger);
 
@@ -41,7 +42,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul>
-        <WalletButton />
+        <WalletButton onClick={props.onShowCart} />
         <div className="hamburger" onClick={handleClick}>
           {clickHamburger ? (
             <FaTimes size={20} style={{ color: "#adb5bd" }} />

@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
+import Card from "./CardCrypto";
+import WalletContext from "../store/wallet-context";
 import "./CoinDetails.css";
-import "./Wallet.css";
-import Card from "./Card";
-import Wallet from "./Wallet";
+
+const API =
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+
+const LIMIT = 9;
 
 const CoinDetails = () => {
   const [data, setData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [walletItems, setWalletItems] = useState([]);
+  const walletCtx = useContext(WalletContext);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false"
-        );
+        const response = await axios.get(API);
         setData(response.data);
       } catch (error) {
         console.log(error);
@@ -35,50 +37,20 @@ const CoinDetails = () => {
 
   const addToWallet = (id) => {
     const selectedCoin = data.find((coin) => coin.id === id);
-    if (selectedCoin) {
-      const existingItem = walletItems.find((item) => item.id === id);
-      if (existingItem) {
-        const updatedItems = walletItems.map((item) =>
-          item.id === id
-            ? {
-                ...item,
-                quantity: item.quantity + 1,
-                totalValue: (item.quantity + 1) * item.price,
-              }
-            : item
-        );
-        setWalletItems(updatedItems);
-      } else {
-        setWalletItems([
-          ...walletItems,
-          {
-            id: selectedCoin.id,
-            image: selectedCoin.image,
-            name: selectedCoin.name,
-            quantity: 1,
-            price: selectedCoin.current_price,
-            totalValue: selectedCoin.current_price,
-          },
-        ]);
-      }
-    }
-  };
 
-  const removeFromWallet = (id) => {
-    const updatedItems = walletItems.map((item) =>
-      item.id === id
-        ? {
-            ...item,
-            quantity: item.quantity > 1 ? item.quantity - 1 : 0,
-            totalValue:
-              item.quantity > 1
-                ? (item.quantity - 1) * item.price
-                : item.totalValue,
-          }
-        : item
-    );
+    if (!selectedCoin) return;
 
-    setWalletItems(updatedItems.filter((item) => item.quantity > 0));
+    const existingItem = (item) => walletCtx.addItem({ ...item, amount: 1 });
+
+    const newItem = {
+      id: selectedCoin.id,
+      image: selectedCoin.image,
+      name: selectedCoin.name,
+      amount: existingItem?.amount ? existingItem.amount + 1 : 1,
+      price: selectedCoin.current_price,
+    };
+
+    walletCtx.addItem(newItem);
   };
 
   return (
@@ -105,7 +77,7 @@ const CoinDetails = () => {
           </div>
         </div>
         <div className="right">
-          {filteredData.slice(0, 9).map((coin) => (
+          {filteredData.slice(0, LIMIT).map((coin) => (
             <Card
               key={coin.id}
               id={coin.id}
@@ -118,10 +90,6 @@ const CoinDetails = () => {
           ))}
         </div>
       </div>
-
-      {walletItems.length > 0 && (
-        <Wallet walletItems={walletItems} removeFromWallet={removeFromWallet} />
-      )}
     </div>
   );
 };

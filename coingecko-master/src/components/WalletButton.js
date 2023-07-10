@@ -1,38 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { SlWallet } from "react-icons/sl";
-import Wallet from "./Wallet";
-import "./WalletButton.css";
+import WalletContext from "../store/wallet-context";
+import classes from "./WalletButton.module.css";
 
-const WalletButton = ({ walletItems, removeFromWallet }) => {
-  const [showWalletModal, setShowWalletModal] = useState(false);
+const WalletButton = (props) => {
+  const [btnAnimation, setBtnAnimation] = useState(false);
+  const walletCtx = useContext(WalletContext);
 
-  const openWalletModal = () => {
-    setShowWalletModal(true);
-  };
+  const numberOfWalletItems = walletCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
 
-  const closeWalletModal = () => {
-    setShowWalletModal(false);
-  };
+  const { items } = walletCtx;
+
+  const btnClasses = `${classes.button} ${btnAnimation ? classes.bump : ""}`;
+  useEffect(() => {
+    if (items.length === 0) {
+      return;
+    }
+    setBtnAnimation(true);
+    const timer = setTimeout(() => {
+      setBtnAnimation(false);
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [items]);
 
   return (
     <div className="btn-group">
-      <button className="btn" onClick={openWalletModal}>
+      <button className={btnClasses} onClick={props.onClick}>
         <SlWallet className="btn-wallet" />
-        Your Wallet
+        <span>Wallet</span>
+        <span className={classes.badge}>{numberOfWalletItems}</span>
       </button>
-      {showWalletModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <button className="close-btn" onClick={closeWalletModal}>
-              Close
-            </button>
-            <Wallet
-              walletItems={walletItems}
-              removeFromWallet={removeFromWallet}
-            />
-          </div>
-        </div>
-      )}
     </div>
   );
 };

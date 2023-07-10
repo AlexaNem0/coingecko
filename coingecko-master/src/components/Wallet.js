@@ -1,33 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
+import WalletContext from "../store/wallet-context";
 
-const Wallet = ({ walletItems, removeFromWallet }) => {
-  const handleRemove = (itemId) => {
-    removeFromWallet(itemId);
-  };
+const Wallet = (props) => {
+  const walletCtx = useContext(WalletContext);
 
   return (
     <div className="wallet-container right featured">
       <h2>Wallet</h2>
-      {walletItems.length > 0 ? (
-        walletItems.map((item, index) => (
-          <div className="wallet-item" key={index}>
-            <div className="wallet-item-image">
-              <img src={item.image} alt={item.name} />
-            </div>
-            <div className="wallet-item-details">
-              <h5>{item.name}</h5>
-              <p>Quantity: {item.quantity}</p>
-              <p>Total Value: ${item.totalValue.toFixed(2)}</p>
-            </div>
-            <div className="wallet-item-price">$ {item.price.toFixed(2)}</div>
-            <button className="btn" onClick={() => handleRemove(item.id)}>
-              Remove
-            </button>
+      {walletCtx.items.map((item, id) => (
+        <div className="wallet-item" key={id}>
+          <div className="wallet-item-image">
+            <img src={item.image} alt={item.name} />
           </div>
-        ))
-      ) : (
-        <p className="wallet-empty">Your wallet is empty.</p>
-      )}
+          <div className="wallet-item-details">
+            <h5>{item.name}</h5>
+            <p>
+              Quantity: {item.amount} / Total Value: ${item.price.toFixed(2)}
+            </p>
+          </div>
+          <div className="wallet-item-price">$ {item.price.toFixed(2)}</div>
+        </div>
+      ))}
     </div>
   );
 };
